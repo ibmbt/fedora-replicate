@@ -1,0 +1,37 @@
+# Paths relative to $HOME that are mirrored into configs/.
+#   update.sh : ~/<path>  ->  configs/<path>   (directories are mirrored exactly)
+#   setup.sh  : configs/  ->  ~/                (files it overwrites are backed up as *.bak-dotfiles)
+#
+# Add a line to start tracking something, then run ./update.sh dotfiles.
+# A path that doesn't exist on your machine is skipped with a warning.
+# NEVER add secrets: ~/.ssh/id_*, ~/.config/gh/hosts.yml, tokens, browser profiles.
+
+# Shell & git
+.bashrc
+.bash_profile
+.gitconfig
+
+# Desktop: default apps, Nautilus sidebar bookmarks, XDG folders, wallpapers
+.config/mimeapps.list
+.config/gtk-3.0/bookmarks
+.config/user-dirs.dirs
+.local/share/backgrounds
+
+# Flatpak per-app permission overrides (what Flatseal edits)
+.local/share/flatpak/overrides
+
+# Common examples: uncomment what you use
+# .zshrc
+# .config/starship.toml
+# .config/nvim
+# .config/ghostty
+# .config/kitty
+# .config/alacritty
+# .config/Code/User/settings.json
+# .config/Code/User/keybindings.json
+# .config/Code/User/snippets
+# .config/mpv
+# .config/btop/btop.conf
+# .local/share/fonts
+# .local/share/icons
+# .themes

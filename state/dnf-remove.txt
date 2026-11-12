@@ -1,0 +1,5 @@
+# Packages Fedora installs by default that you DON'T want on your machines.
+# Maintained by hand: update.sh never touches this file. Shell globs work.
+# Examples:
+# libreoffice*
+# rhythmbox

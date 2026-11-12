@@ -1,0 +1,27 @@
+# dconf paths that update.sh leaves OUT of state/dconf.ini.
+# Each line is an awk regex, matched against "section/" for whole sections
+# and "section/key" for single keys. Everything else is captured.
+
+# File-chooser history, window sizes and positions (machine/session specific)
+^org/gnome/portal/filechooser/
+^org/gtk/settings/file-chooser/
+^org/gtk/gtk4/settings/file-chooser/
+/window-state/
+/state/window/
+/window-(size|width|height|maximized|position)$
+/(last-folder-path|last-save-directory|last-panel|last-selected-power-profile)$
+
+# Wi-Fi / VPN connection details (NetworkManager keeps the real ones in /etc)
+^org/gnome/nm-applet/
+
+# Auto-detected location, timestamps, one-off dialogs
+/night-light-last-coordinates$
+/(check-timestamp|donation-reminder-last-shown|welcome-dialog-last-shown-version)$
+/.*-last-shown$
+
+# GSConnect pairs per-device with keys that don't survive a reinstall
+^org/gnome/shell/extensions/gsconnect/device/
+^org/gnome/shell/extensions/gsconnect/devices$
+
+# Login screen auth options are managed by authselect and locked system-wide
+^org/gnome/login-screen/
